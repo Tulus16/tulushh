@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Desa Simogirang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .admin-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full bg-gray-50 font-sans"><!-- Navigation -->
+  <nav class="bg-green-900 shadow-lg fixed w-full top-0 z-50">
+   <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+     <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center"><span class="text-green-900 font-bold text-lg">🏛️</span>
+      </div>
+      <h1 id="village-name" class="text-white text-xl font-bold">Desa Simogirang</h1>
+     </div>
+     <div class="flex space-x-6"><a href="#home" class="nav-btn text-white hover:text-green-200 px-3 py-2 rounded transition-colors">Beranda</a> <a href="#news" class="nav-btn text-white hover:text-green-200 px-3 py-2 rounded transition-colors">Berita</a> <a href="#services" class="nav-btn text-white hover:text-green-200 px-3 py-2 rounded transition-colors">Layanan</a> <a href="#contact" class="nav-btn text-white hover:text-green-200 px-3 py-2 rounded transition-colors">Kontak</a>
+     </div>
+    </div>
+   </div>
+  </nav><!-- Main Content -->
+  <div class="pt-20"><!-- Hero Section -->
+   <section id="home" class="bg-gradient-to-r from-green-800 to-green-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+     <h2 id="welcome-message" class="text-4xl font-bold mb-4">Selamat Datang di Website Desa Simogirang</h2>
+     <p class="text-xl mb-8">Portal Informasi dan Layanan Digital Desa</p><a href="#services" class="bg-white text-green-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">Lihat Layanan</a>
+    </div>
+   </section><!-- Quick Info Cards -->
+   <section class="bg-green-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-800">
+       <div class="text-3xl mb-4">
+        📊
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Data Desa</h3>
+       <p class="text-gray-600">Informasi statistik dan demografi desa terkini</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-800">
+       <div class="text-3xl mb-4">
+        📋
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Layanan Online</h3>
+       <p class="text-gray-600">Akses layanan administrasi desa secara digital</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-800">
+       <div class="text-3xl mb-4">
+        📢
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Pengumuman</h3>
+       <p class="text-gray-600">Berita dan pengumuman terbaru dari desa</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- News Section -->
+   <section id="news" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Berita &amp; Pengumuman</h2>
+     <div id="news-list" class="space-y-6">
+      <div class="text-center text-gray-500 py-8">
+       <div class="text-4xl mb-4">
+        📰
+       </div>
+       <p>Belum ada berita yang dipublikasikan</p>
+       <p class="text-sm mt-2">Admin dapat menambahkan berita melalui panel admin</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="py-16 bg-green-50">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Layanan Desa</h2>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        📄
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Surat Keterangan</h3>
+       <p class="text-gray-600 mb-4">Pengurusan surat keterangan domisili, usaha, dan lainnya</p><button class="text-green-800 font-semibold hover:text-green-900">Ajukan Permohonan →</button>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        👥
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Kartu Keluarga</h3>
+       <p class="text-gray-600 mb-4">Pengurusan dan pembaruan kartu keluarga</p><button class="text-green-800 font-semibold hover:text-green-900">Ajukan Permohonan →</button>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        🆔
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">KTP</h3>
+       <p class="text-gray-600 mb-4">Pengurusan KTP baru dan perpanjangan</p><button class="text-green-800 font-semibold hover:text-green-900">Ajukan Permohonan →</button>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        💰
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Bantuan Sosial</h3>
+       <p class="text-gray-600 mb-4">Informasi dan pendaftaran program bantuan</p><button class="text-green-800 font-semibold hover:text-green-900">Lihat Info →</button>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        🏗️
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Izin Mendirikan Bangunan</h3>
+       <p class="text-gray-600 mb-4">Pengurusan IMB untuk bangunan baru</p><button class="text-green-800 font-semibold hover:text-green-900">Ajukan Permohonan →</button>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-green-800">
+       <div class="text-3xl mb-4">
+        📊
+       </div>
+       <h3 class="text-xl font-semibold mb-2 text-green-800">Data Statistik</h3>
+       <p class="text-gray-600 mb-4">Akses data dan statistik desa</p><button class="text-green-800 font-semibold hover:text-green-900">Lihat Data →</button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Kontak Kami</h2>
+     <div class="grid md:grid-cols-2 gap-12">
+      <div>
+       <h3 class="text-xl font-semibold mb-6 text-green-800">Informasi Kontak</h3>
+       <div class="space-y-4">
+        <div class="flex items-start space-x-3">
+         <div class="text-green-800 text-xl">
+          📍
+         </div>
+         <div>
+          <p class="font-semibold text-green-800">Alamat</p>
+          <p id="village-address" class="text-gray-600">Jl. Raya Simogirang No. 123, Kec. Simogirang</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-3">
+         <div class="text-green-800 text-xl">
+          📞
+         </div>
+         <div>
+          <p class="font-semibold text-green-800">Telepon</p>
+          <p id="village-phone" class="text-gray-600">(021) 1234-5678</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-3">
+         <div class="text-green-800 text-xl">
+          ⏰
+         </div>
+         <div>
+          <p class="font-semibold text-green-800">Jam Pelayanan</p>
+          <p class="text-gray-600">Senin - Jumat: 08:00 - 16:00</p>
+          <p class="text-gray-600">Sabtu: 08:00 - 12:00</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <h3 class="text-xl font-semibold mb-6 text-green-800">Kirim Pesan</h3>
+       <form class="space-y-4" onsubmit="handleContactForm(event)">
+        <div><label class="block text-sm font-medium mb-2 text-green-800">Nama Lengkap</label> <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+        </div>
+        <div><label class="block text-sm font-medium mb-2 text-green-800">Email</label> <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+        </div>
+        <div><label class="block text-sm font-medium mb-2 text-green-800">Pesan</label> <textarea rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800"></textarea>
+        </div><button type="submit" class="w-full bg-green-800 text-white py-2 px-4 rounded-md hover:bg-green-900 transition-colors">Kirim Pesan</button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </section><!-- Hidden Admin Access (Triple-click footer logo to access) -->
+   <div id="admin-page" class="fixed inset-0 bg-green-50 z-50 hidden overflow-y-auto">
+    <div class="min-h-full"><!-- Admin Header with Back Button -->
+     <div class="bg-green-800 text-white p-6">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+       <div class="flex items-center space-x-4"><button onclick="exitAdminPage()" class="bg-green-700 hover:bg-green-600 px-4 py-2 rounded-md transition-colors flex items-center space-x-2"> <span>←</span> <span>Kembali ke Website</span> </button>
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center"><span class="text-green-800 font-bold text-lg">🔐</span>
+        </div>
+        <h1 class="text-2xl font-bold">Panel Admin Desa Simogirang</h1>
+       </div><button onclick="handleAdminLogout()" id="logout-btn" class="bg-green-700 hover:bg-green-600 px-4 py-2 rounded-md transition-colors hidden"> Logout </button>
+      </div>
+     </div><!-- Admin Content -->
+     <div class="max-w-7xl mx-auto px-4 py-8"><!-- Login Form -->
+      <div id="admin-login" class="max-w-md mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+       <div class="bg-green-800 text-white p-6 text-center">
+        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-green-800 text-2xl">🔐</span>
+        </div>
+        <h2 class="text-2xl font-bold">Login Admin</h2>
+        <p class="text-green-100 mt-2">Masukkan kredensial untuk mengakses panel admin</p>
+       </div>
+       <div class="p-6">
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+         <div><label class="block text-sm font-medium mb-2 text-green-800">Username</label> <input type="text" id="admin-username" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800" placeholder="Masukkan username">
+         </div>
+         <div><label class="block text-sm font-medium mb-2 text-green-800">Password</label> <input type="password" id="admin-password" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800" placeholder="Masukkan password">
+         </div><button type="submit" id="login-btn" class="w-full bg-green-800 text-white py-2 px-4 rounded-md hover:bg-green-900 transition-colors"> Masuk </button>
+        </form>
+        <div class="mt-4 p-3 bg-green-50 rounded-md border border-green-200">
+         <p class="text-sm text-green-700"><strong>Demo Kredensial:</strong></p>
+         <p class="text-sm text-green-600">Username: <code>admin</code></p>
+         <p class="text-sm text-green-600">Password: <code>simogirang2024</code></p>
+        </div>
+       </div>
+      </div><!-- Admin Panel (Hidden by default) -->
+      <div id="admin-panel" class="bg-white rounded-lg shadow-xl overflow-hidden hidden"><!-- Admin Navigation -->
+       <div class="border-b border-gray-200">
+        <nav class="flex space-x-8 px-6"><button onclick="showAdminTab('content')" class="admin-tab-btn py-4 px-2 border-b-2 border-green-800 text-green-800 font-medium">Kelola Konten</button> <button onclick="showAdminTab('stats')" class="admin-tab-btn py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700">Statistik</button>
+        </nav>
+       </div><!-- Content Management Tab -->
+       <div id="admin-content-tab" class="admin-tab p-6">
+        <div class="grid lg:grid-cols-2 gap-8"><!-- Add New Content -->
+         <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+          <h3 class="text-lg font-semibold mb-4 text-green-800">Tambah Konten Baru</h3>
+          <form id="add-content-form" class="space-y-4">
+           <div><label class="block text-sm font-medium mb-2 text-green-800">Jenis Konten</label> <select id="content-type" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800"> <option value="">Pilih jenis konten</option> <option value="news">Berita</option> <option value="announcement">Pengumuman</option> <option value="service">Layanan</option> </select>
+           </div>
+           <div><label class="block text-sm font-medium mb-2 text-green-800">Judul</label> <input type="text" id="content-title" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+           </div>
+           <div><label class="block text-sm font-medium mb-2 text-green-800">Konten</label> <textarea id="content-body" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800"></textarea>
+           </div>
+           <div><label class="block text-sm font-medium mb-2 text-green-800">Gambar (Opsional)</label> <input type="file" id="content-image" accept="image/*" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+            <p class="text-xs text-gray-500 mt-1">Format: JPG, PNG, GIF (Maks. 5MB)</p>
+           </div>
+           <div><label class="block text-sm font-medium mb-2 text-green-800">Penulis</label> <input type="text" id="content-author" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+           </div><button type="button" onclick="handleAddContent()" id="add-content-btn" class="w-full bg-green-800 text-white py-2 px-4 rounded-md hover:bg-green-900 transition-colors"> Tambah Konten </button>
+          </form>
+         </div><!-- Content List -->
+         <div>
+          <h3 class="text-lg font-semibold mb-4 text-green-800">Konten yang Dipublikasikan</h3>
+          <div id="admin-content-list" class="space-y-3 max-h-96 overflow-y-auto">
+           <div class="text-center text-gray-500 py-8">
+            <div class="text-3xl mb-2">
+             📝
+            </div>
+            <p>Belum ada konten</p>
+            <p class="text-sm mt-1">Tambahkan konten pertama menggunakan form di sebelah kiri</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div><!-- Statistics Tab -->
+       <div id="admin-stats-tab" class="admin-tab hidden p-6">
+        <h3 class="text-lg font-semibold mb-6 text-green-800">Statistik Website</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+         <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-green-700 text-sm font-medium">Total Konten</p>
+            <p id="total-content" class="text-2xl font-bold text-green-900">0</p>
+           </div>
+           <div class="text-green-600 text-2xl">
+            📄
+           </div>
+          </div>
+         </div>
+         <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-green-700 text-sm font-medium">Berita Aktif</p>
+            <p id="active-news" class="text-2xl font-bold text-green-900">0</p>
+           </div>
+           <div class="text-green-600 text-2xl">
+            📰
+           </div>
+          </div>
+         </div>
+         <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-green-700 text-sm font-medium">Pengumuman</p>
+            <p id="total-announcements" class="text-2xl font-bold text-green-900">0</p>
+           </div>
+           <div class="text-green-600 text-2xl">
+            📢
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div><!-- Footer -->
+  <footer class="bg-green-900 text-white py-12">
+   <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+     <div>
+      <div class="flex items-center space-x-3 mb-4">
+       <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center"><span class="text-green-900 font-bold text-lg">🏛️</span>
+       </div>
+       <h3 class="text-xl font-bold">Desa Simogirang</h3>
+      </div>
+      <p class="text-green-100 mb-4">Portal resmi informasi dan layanan digital Desa Simogirang untuk melayani masyarakat dengan lebih baik.</p>
+     </div>
+     <div>
+      <h4 class="text-lg font-semibold mb-4">Layanan Utama</h4>
+      <ul class="space-y-2 text-green-100">
+       <li>• Surat Keterangan</li>
+       <li>• Kartu Keluarga</li>
+       <li>• KTP</li>
+       <li>• Bantuan Sosial</li>
+       <li>• Izin Mendirikan Bangunan</li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+      <div class="space-y-2 text-green-100">
+       <p>📍 Jl. Raya Simogirang No. 123</p>
+       <p>📞 (021) 1234-5678</p>
+       <p>⏰ Senin - Jumat: 08:00 - 16:00</p>
+       <p>⏰ Sabtu: 08:00 - 12:00</p>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-green-700 mt-8 pt-8 text-center text-green-100">
+     <p>© 2024 Desa Simogirang. Semua hak dilindungi undang-undang.</p><!-- Hidden Admin Access -->
+     <div class="mt-6 pt-4 border-t border-green-800">
+      <div id="admin-access-trigger" class="inline-flex items-center space-x-2 cursor-pointer opacity-50 hover:opacity-75 transition-opacity" onclick="handleAdminAccess()">
+       <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center"><span class="text-green-900 text-xs">🔐</span>
+       </div><span class="text-xs text-green-200">Hanya admin yang dapat mengakses</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer><!-- Success Message -->
+  <div id="success-message" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+   <div class="flex items-center space-x-2"><span>✅</span> <span id="success-text">Berhasil!</span>
+   </div>
+  </div>
+<script>
+    // --- SIMULASI DATA SDK DENGAN LOCAL STORAGE UNTUK LINGKUNGAN STANDALONE ---
+    const LOCAL_STORAGE_KEY = 'simogirang_content_data';
+
+    const localDataSdk = {
+        // Memuat data dari Local Storage
+        readAll: () => {
+            const dataJson = localStorage.getItem(LOCAL_STORAGE_KEY);
+            return dataJson ? JSON.parse(dataJson) : [];
+        },
+
+        // Menyimpan data ke Local Storage
+        writeAll: (data) => {
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+        },
+
+        // Inisialisasi: memuat data awal dan memicu render
+        init: (handler) => {
+            const initialData = localDataSdk.readAll();
+            handler.onDataChanged(initialData);
+            return { isOk: true };
+        },
+
+        // CREATE: Menambahkan konten baru
+        create: (newItem) => {
+            const currentData = localDataSdk.readAll();
+            currentData.unshift(newItem); // Tambahkan di awal
+            localDataSdk.writeAll(currentData);
+            dataHandler.onDataChanged(currentData);
+            return { isOk: true };
+        },
+
+        // DELETE: Menghapus konten
+        delete: (itemToDelete) => {
+            let currentData = localDataSdk.readAll();
+            currentData = currentData.filter(item => item.id !== itemToDelete.id);
+            localDataSdk.writeAll(currentData);
+            dataHandler.onDataChanged(currentData);
+            return { isOk: true };
+        }
+    };
+    // --------------------------------------------------------------------------
+
+    // Configuration
+    const defaultConfig = {
+        village_name: "Desa Simogirang",
+        welcome_message: "Selamat Datang di Website Desa Simogirang",
+        village_address: "Jl. Raya Simogirang No. 123, Kec. Simogirang",
+        village_phone: "(021) 1234-5678"
+    };
+
+    let currentData = [];
+    let isLoading = false;
+    let isAdminLoggedIn = false;
+    let adminClickCount = 0;
+
+    // Admin credentials (in production, this should be handled server-side)
+    const adminCredentials = {
+        username: 'admin',
+        password: 'simogirang2024'
+    };
+
+    // Data SDK Handler
+    const dataHandler = {
+        onDataChanged(data) {
+            // Urutkan data berdasarkan tanggal terbaru setiap kali data berubah
+            currentData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            renderContent();
+            updateStats();
+        }
+    };
+
+    // Initialize SDKs
+    async function initializeApp() {
+        try {
+            // Tentukan SDK yang akan digunakan: Data SDK asli atau simulasi lokal (FALLBACK)
+            const sdk = window.dataSdk ? window.dataSdk : localDataSdk;
+
+            if (sdk) {
+                const result = await sdk.init(dataHandler);
+                if (!result.isOk) {
+                    console.error("Failed to initialize data SDK/localDataSdk");
+                }
+            }
+
+            if (window.elementSdk) {
+                await window.elementSdk.init({
+                    defaultConfig,
+                    onConfigChange: async (config) => {
+                        document.getElementById('village-name').textContent = config.village_name || defaultConfig.village_name;
+                        document.getElementById('welcome-message').textContent = config.welcome_message || defaultConfig.welcome_message;
+                        document.getElementById('village-address').textContent = config.village_address || defaultConfig.village_address;
+                        document.getElementById('village-phone').textContent = config.village_phone || defaultConfig.village_phone;
+                    },
+                    mapToCapabilities: (config) => ({
+                        recolorables: [
+                            {
+                                get: () => config.primary_color || "#16a34a",
+                                set: (value) => {
+                                    if (window.elementSdk) {
+                                        window.elementSdk.setConfig({ primary_color: value });
+                                    }
+                                }
+                            }
+                        ],
+                        borderables: [],
+                        fontEditable: {
+                            get: () => config.font_family || "Inter",
+                            set: (value) => {
+                                if (window.elementSdk) {
+                                    window.elementSdk.setConfig({ font_family: value });
+                                }
+                            }
+                        },
+                        fontSizeable: {
+                            get: () => config.font_size || 16,
+                            set: (value) => {
+                                if (window.elementSdk) {
+                                    window.elementSdk.setConfig({ font_size: value });
+                                }
+                            }
+                        }
+                    }),
+                    mapToEditPanelValues: (config) => new Map([
+                        ["village_name", config.village_name || defaultConfig.village_name],
+                        ["welcome_message", config.welcome_message || defaultConfig.welcome_message],
+                        ["village_address", config.village_address || defaultConfig.village_address],
+                        ["village_phone", config.village_phone || defaultConfig.village_phone]
+                    ])
+                });
+            }
+        } catch (error) {
+            console.error("Initialization error:", error);
+        }
+    }
+
+    // Smooth scrolling for navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+
+    // Hidden Admin Access
+    function handleAdminAccess() {
+        adminClickCount++;
+        
+        if (adminClickCount === 3) {
+            document.getElementById('admin-page').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            adminClickCount = 0;
+            showMessage('Akses admin terbuka. Silakan login untuk melanjutkan.');
+        } else if (adminClickCount === 1) {
+            showMessage(`Klik ${3 - adminClickCount} kali lagi untuk akses admin...`, 'info');
+        } else if (adminClickCount === 2) {
+            showMessage(`Klik ${3 - adminClickCount} kali lagi untuk akses admin...`, 'info');
+        }
+        
+        // Reset counter after 3 seconds if not completed
+        setTimeout(() => {
+            if (adminClickCount < 3) {
+                adminClickCount = 0;
+            }
+        }, 3000);
+    }
+
+    function exitAdminPage() {
+        document.getElementById('admin-page').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        
+        // Reset admin state
+        if (isAdminLoggedIn) {
+            handleAdminLogout();
+        }
+    }
+
+    // Admin Authentication
+    function handleAdminLogin(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('admin-username').value;
+        const password = document.getElementById('admin-password').value;
+        const loginBtn = document.getElementById('login-btn');
+        
+        loginBtn.textContent = 'Memverifikasi...';
+        loginBtn.disabled = true;
+        
+        // Simulate authentication delay
+        setTimeout(() => {
+            if (username === adminCredentials.username && password === adminCredentials.password) {
+                isAdminLoggedIn = true;
+                document.getElementById('admin-login').classList.add('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                document.getElementById('logout-btn').classList.remove('hidden');
+                showMessage('Login berhasil! Selamat datang, Admin.');
+            } else {
+                showMessage('Username atau password salah. Silakan coba lagi.', 'error');
+            }
+            
+            loginBtn.textContent = 'Masuk';
+            loginBtn.disabled = false;
+            
+            // Clear form
+            document.getElementById('admin-username').value = '';
+            document.getElementById('admin-password').value = '';
+        }, 1000);
+    }
+
+    function handleAdminLogout() {
+        isAdminLoggedIn = false;
+        document.getElementById('admin-panel').classList.add('hidden');
+        document.getElementById('admin-login').classList.remove('hidden');
+        document.getElementById('logout-btn').classList.add('hidden');
+        
+        // Clear form
+        document.getElementById('admin-username').value = '';
+        document.getElementById('admin-password').value = '';
+        
+        showMessage('Anda telah logout dari panel admin.');
+    }
+
+    // Admin Panel
+    function showAdminTab(tabName, event) {
+        if (!isAdminLoggedIn) {
+            showMessage('Anda harus login terlebih dahulu untuk mengakses panel admin.', 'error');
+            return;
+        }
+        
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.classList.add('hidden');
+        });
+        document.getElementById('admin-' + tabName + '-tab').classList.remove('hidden');
+
+        document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+            btn.classList.remove('border-green-800', 'text-green-800');
+            btn.classList.add('border-transparent', 'text-gray-500');
+        });
+        
+        // Perbaikan: Gunakan event.target.closest untuk mendapatkan elemen tombol yang benar
+        const clickedButton = event.target.closest('.admin-tab-btn');
+        if (clickedButton) {
+             clickedButton.classList.add('border-green-800', 'text-green-800');
+             clickedButton.classList.remove('border-transparent', 'text-gray-500');
+        }
+    }
+
+    // Content Management
+    async function handleAddContent() {
+        if (!isAdminLoggedIn) {
+            showMessage('Anda harus login sebagai admin untuk menambahkan konten.', 'error');
+            return;
+        }
+        
+        if (isLoading) return;
+        
+        if (currentData.length >= 999) {
+            showMessage("Batas maksimum 999 konten telah tercapai. Hapus beberapa konten terlebih dahulu.", "error");
+            return;
+        }
+
+        // Validasi form
+        const type = document.getElementById('content-type').value;
+        const title = document.getElementById('content-title').value;
+        const content = document.getElementById('content-body').value;
+        const author = document.getElementById('content-author').value;
+        const imageFile = document.getElementById('content-image').files[0];
+
+        if (!type || !title || !content || !author) {
+            showMessage('Semua field wajib harus diisi!', 'error');
+            return;
+        }
+
+        const btn = document.getElementById('add-content-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Menambahkan...';
+        btn.disabled = true;
+        isLoading = true;
+
+        let imageData = null;
+
+        // Process image if uploaded
+        if (imageFile) {
+            if (imageFile.size > 5 * 1024 * 1024) { // 5MB limit
+                showMessage('Ukuran gambar terlalu besar. Maksimal 5MB.', 'error');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                isLoading = false;
+                return;
+            }
+
+            try {
+                imageData = await convertImageToBase64(imageFile);
+            } catch (error) {
+                showMessage('Gagal memproses gambar. Silakan coba lagi.', 'error');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                isLoading = false;
+                return;
+            }
+        }
+        
+        // Tentukan SDK yang aktif
+        const activeSdk = window.dataSdk ? window.dataSdk : localDataSdk;
+
+
+        const formData = {
+            id: Date.now().toString(),
+            type: type,
+            title: title,
+            content: content,
+            author: author,
+            date: new Date().toISOString(),
+            status: 'published',
+            image: imageData || null,
+            image_name: imageFile ? imageFile.name : null
+        };
+
+        try {
+            if (activeSdk) {
+                const result = await activeSdk.create(formData);
+                if (result.isOk) {
+                    // Reset form
+                    document.getElementById('add-content-form').reset();
+                    showMessage('Konten berhasil ditambahkan!');
+                } else {
+                    showMessage('Gagal menambahkan konten. Silakan coba lagi.', 'error');
+                }
+            } else {
+                showMessage('Data SDK atau simulasi lokal tidak tersedia.', 'error');
+            }
+        } catch (error) {
+            console.error('Error adding content:', error);
+            showMessage('Terjadi kesalahan. Silakan coba lagi.', 'error');
+        } finally {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            isLoading = false;
+        }
+    }
+
+    // Helper function to convert image to base64
+    function convertImageToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    async function deleteContent(contentId) {
+        if (!isAdminLoggedIn) {
+            showMessage('Anda harus login sebagai admin untuk menghapus konten.', 'error');
+            return;
+        }
+        
+        const content = currentData.find(item => item.id === contentId);
+        if (!content) return;
+
+        const deleteBtn = document.querySelector(`[onclick="deleteContent('${contentId}')"]`);
+        if (!deleteBtn) return;
+
+        deleteBtn.textContent = 'Menghapus...';
+        deleteBtn.disabled = true;
+        
+        // Tentukan SDK yang aktif
+        const activeSdk = window.dataSdk ? window.dataSdk : localDataSdk;
+
+        try {
+            if (activeSdk) {
+                const result = await activeSdk.delete(content);
+                if (result.isOk) {
+                    showMessage('Konten berhasil dihapus!');
+                } else {
+                    showMessage('Gagal menghapus konten. Silakan coba lagi.', 'error');
+                }
+            }
+        } catch (error) {
+            showMessage('Terjadi kesalahan. Silakan coba lagi.', 'error');
+        } finally {
+            deleteBtn.textContent = 'Hapus';
+            deleteBtn.disabled = false;
+        }
+    }
+
+    // Render Functions
+    function renderContent() {
+        renderNewsList();
+        renderAdminContentList();
+    }
+
+    function renderNewsList() {
+        const newsList = document.getElementById('news-list');
+        const newsItems = currentData.filter(item => item.type === 'news' || item.type === 'announcement');
+
+        if (newsItems.length === 0) {
+            newsList.innerHTML = `
+                <div class="text-center text-gray-500 py-8">
+                    <div class="text-4xl mb-4">📰</div>
+                    <p>Belum ada berita yang dipublikasikan</p>
+                    <p class="text-sm mt-2">Admin dapat menambahkan berita melalui panel admin</p>
+                </div>
+            `;
+            return;
+        }
+
+        newsList.innerHTML = newsItems.map(item => `
+            <article class="bg-white rounded-lg shadow-md overflow-hidden fade-in">
+                ${item.image ? `
+                    <div class="w-full h-48 bg-gray-200">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                    </div>
+                ` : ''}
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full ${item.type === 'news' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}">
+                            ${item.type === 'news' ? 'Berita' : 'Pengumuman'}
+                        </span>
+                        <span class="text-sm text-gray-500">${new Date(item.date).toLocaleDateString('id-ID')}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">${item.title}</h3>
+                    <p class="text-gray-600 mb-4">${item.content}</p>
+                    <div class="text-sm text-gray-500">
+                        <span>Oleh: ${item.author}</span>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+    }
+
+    function renderAdminContentList() {
+        const contentList = document.getElementById('admin-content-list');
+
+        if (currentData.length === 0) {
+            contentList.innerHTML = `
+                <div class="text-center text-gray-500 py-8">
+                    <div class="text-3xl mb-2">📝</div>
+                    <p>Belum ada konten</p>
+                    <p class="text-sm mt-1">Tambahkan konten pertama menggunakan form di sebelah kiri</p>
+                </div>
+            `;
+            return;
+        }
+
+        contentList.innerHTML = currentData.map(item => `
+            <div class="bg-white p-4 rounded-lg border border-gray-200">
+                <div class="flex items-start justify-between">
+                    <div class="flex space-x-3 flex-1">
+                        ${item.image ? `
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'w-full h-full bg-gray-300 flex items-center justify-center text-gray-500 text-xs\\'>📷</div>';">
+                            </div>
+                        ` : `
+                            <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-gray-400 text-xl">📄</span>
+                            </div>
+                        `}
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="px-2 py-1 text-xs font-semibold rounded ${getTypeColor(item.type)}">
+                                    ${getTypeLabel(item.type)}
+                                </span>
+                                <span class="text-xs text-gray-500">${new Date(item.date).toLocaleDateString('id-ID')}</span>
+                            </div>
+                            <h4 class="font-medium text-gray-900 truncate">${item.title}</h4>
+                            <p class="text-sm text-gray-600 mt-1">${item.content.substring(0, 80)}${item.content.length > 80 ? '...' : ''}</p>
+                            ${item.image_name ? `<p class="text-xs text-gray-400 mt-1">📎 ${item.image_name}</p>` : ''}
+                        </div>
+                    </div>
+                    <button onclick="deleteContent('${item.id}')" class="ml-4 text-red-600 hover:text-red-800 text-sm font-medium flex-shrink-0">
+                        Hapus
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function updateStats() {
+        document.getElementById('total-content').textContent = currentData.length;
+        document.getElementById('active-news').textContent = currentData.filter(item => item.type === 'news').length;
+        document.getElementById('total-announcements').textContent = currentData.filter(item => item.type === 'announcement').length;
+    }
+
+    // Helper Functions
+    function getTypeColor(type) {
+        switch(type) {
+            case 'news': return 'bg-blue-100 text-blue-800';
+            case 'announcement': return 'bg-yellow-100 text-yellow-800';
+            case 'service': return 'bg-green-100 text-green-800';
+            default: return 'bg-gray-100 text-gray-800';
+        }
+    }
+
+    function getTypeLabel(type) {
+        switch(type) {
+            case 'news': return 'Berita';
+            case 'announcement': return 'Pengumuman';
+            case 'service': return 'Layanan';
+            default: return 'Konten';
+        }
+    }
+
+    function showMessage(message, type = 'success') {
+        const messageEl = document.getElementById('success-message');
+        const textEl = document.getElementById('success-text');
+        
+        textEl.textContent = message;
+        let bgColor = 'bg-green-500';
+        if (type === 'error') bgColor = 'bg-red-500';
+        else if (type === 'info') bgColor = 'bg-blue-500';
+        
+        messageEl.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-transform duration-300 z-50 ${bgColor} text-white`;
+        
+        messageEl.classList.remove('translate-x-full');
+        
+        setTimeout(() => {
+            messageEl.classList.add('translate-x-full');
+        }, 3000);
+    }
+
+    function handleContactForm(event) {
+        event.preventDefault();
+        showMessage('Pesan Anda telah terkirim! Kami akan segera merespons.');
+        event.target.reset();
+    }
+
+    // Initialize app when page loads
+    document.addEventListener('DOMContentLoaded', initializeApp);
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99db0b49c0dd5ce7',t:'MTc2MzAwMzA5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
